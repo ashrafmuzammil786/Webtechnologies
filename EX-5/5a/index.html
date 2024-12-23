@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Boxing Championship</title>
+        <style>
+            /* Boxing-themed background styling */
+            body {
+                background: linear-gradient(135deg, #ff0000, #0000ff, #ffd700);
+                font-family: 'Arial', sans-serif;
+                color: white;
+                height: 100vh;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            /* Glass-styled container */
+            .glass-container {
+                background: rgba(255, 255, 255, 0.1);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                border-radius: 15px;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                width: 80%;
+                max-width: 500px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+                margin-bottom: 20px;
+                text-shadow: 0 0 10px #ffd700, 0 0 20px #ff0000;
+            }
+
+            p {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+            }
+
+            a {
+                display: inline-block;
+                background: linear-gradient(135deg, #ff0000, #0000ff);
+                color: white;
+                padding: 10px 20px;
+                font-size: 1em;
+                font-weight: bold;
+                border: 2px solid #ffd700;
+                border-radius: 10px;
+                text-decoration: none;
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+
+            a:hover {
+                transform: scale(1.1);
+                box-shadow: 0 0 15px #ffd700, 0 0 30px #ff0000;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="glass-container">
+            <h1>Welcome to the Boxing Championship!</h1>
+            <p>Click the link below to step into the ring:</p>
+            <a href="hello">Enter the Ring</a>
+        </div>
+    </body>
+</html>

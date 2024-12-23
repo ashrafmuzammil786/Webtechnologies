@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxing Workout List</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff0000, #0000ff, #ffd700);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 20px;
+            text-shadow: 0 0 10px #ffd700, 0 0 20px #ff0000;
+        }
+
+        form {
+            margin: 20px;
+        }
+
+        label {
+            font-size: 1.2em;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #ffd700;
+            margin-right: 10px;
+            width: 250px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ff0000, #0000ff);
+            color: white;
+            border: 2px solid #ffd700;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #ffd700, 0 0 30px #ff0000;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 1.2em;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ffd700;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        hr {
+            border: 1px solid #ffd700;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Boxing Workout To-Do List</h1>
+    <form action="todo" method="POST">
+        <label for="task">Add a Workout:</label>
+        <input type="text" id="task" name="task" placeholder="e.g., Jump Rope, Push-ups" required>
+        <input type="submit" value="Add Workout">
+    </form>
+    <hr>
+    <h2>Your Boxing Workout Plan:</h2>
+    <ul id="taskList">
+    </ul>
+</body>
+</html>

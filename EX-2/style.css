@@ -1,0 +1,9 @@
+area {
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+area:hover {
+    filter: brightness(1.2);
+    border: 2px solid #fff; 
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxing Championship</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Background with red and blue gradients and a metallic gold overlay */
+        body {
+            background: linear-gradient(135deg, #ff0000, #0000ff, #ffd700);
+            background-size: 200% 200%;
+            animation: backgroundMove 10s infinite alternate;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+
+        @keyframes backgroundMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .container {
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Styled glass effect for the content container */
+        .glass-container {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Dynamic time display */
+        .time-container {
+            margin-bottom: 20px;
+        }
+
+        /* Boxing ring image hover effect */
+        .image-container img {
+            border-radius: 15px;
+            width: 300px;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #ffd700, 0 0 40px #ff0000;
+        }
+
+        .hover-text {
+            visibility: hidden;
+            font-weight: bold;
+            margin-top: 10px;
+            color: gold;
+            transition: visibility 0.5s, opacity 0.5s ease-in-out;
+        }
+
+        .image-container:hover .hover-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Button styled like a championship belt */
+        .btn-custom {
+            background: linear-gradient(135deg, #ff0000, #0000ff);
+            border: 2px solid gold;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px gold, 0 0 40px white;
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glass-container">
+            <h1 class="mb-2">Welcome to the Boxing Championship</h1>
+
+            <!-- i) Dynamic Time Display -->
+            <div class="time-container">
+                <h2>Current Time: <span id="time"></span></h2>
+            </div>
+
+            <!-- ii) Display Text on Image Hover -->
+            <div class="image-container">
+                <img src="image.png" alt="Boxing" id="boxingImage">
+                <p class="hover-text">Welcome to the Ring of Champions!</p>
+            </div>
+
+            <!-- iii) Change Background Color on Click -->
+            <button id="button" class="btn-custom mt-4">Click to Energize the Arena</button>
+
+            <!-- iv) Change Text on Hover -->
+            <p id="hoverText" class="mt-4" onmouseover="changeText()" onmouseout="resetText()">Hover over this text to reveal the fighter's spirit!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Boxing Championship. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // iii) Change the background color when the button is clicked
+        const btn = document.getElementById("button");
+        btn.addEventListener("click", () => {
+            const randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' 
+                                + Math.floor(Math.random() * 256) + ',' 
+                                + Math.floor(Math.random() * 256) + ')';
+            document.body.style.background = `radial-gradient(circle, ${randomColor}, black)`;
+        });
+
+        // i) Dynamic Time Display
+        function updateTime() {
+            const currentTime = new Date().toLocaleTimeString();
+            document.getElementById("time").textContent = currentTime;
+        }
+
+        // Update the time every second
+        setInterval(updateTime, 1000);
+
+        // iv) Change the text when hovered
+        function changeText() {
+            document.getElementById("hoverText").textContent = "Fight for Glory!";
+        }
+
+        function resetText() {
+            document.getElementById("hoverText").textContent = "Hover over this text to reveal the fighter's spirit!";
+        }
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
